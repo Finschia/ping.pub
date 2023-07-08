@@ -10,7 +10,7 @@
     "snapshot_provider": "",
     "coin_type": "438",
     "sdk_version": "0.45.10",
-    "addr_prefix": "line",
+    "addr_prefix": "link",
     "logo": "/logos/FNSA-logo-light.png",
     "assets": [
         {

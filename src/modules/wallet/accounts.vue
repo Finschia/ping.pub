@@ -29,8 +29,8 @@ const conf = ref(
 const balances = ref({} as Record<string, CoinWithPrice[]>);
 const delegations = ref({} as Record<string, Delegation[]>);
 
-// initial loading queue 
-// load balances 
+// initial loading queue
+// load balances
 Object.values(conf.value).forEach((imported) => {
   let promise = Promise.resolve();
   for (let i = 0; i < imported.length; i++) {
@@ -315,7 +315,7 @@ async function loadBalances(endpoint: string, address: string) {
                       class="text-xs" :class="format.color(x.delegation.change24h)">{{
                         format.formatNumber((x.delegation.change24h || 0) * (x.delegation.value || 0) / 100, '+0,0.[00]')
                       }}</span></span>
-                </RouterLink>                
+                </RouterLink>
               </li>
             </div>
           </ul>
@@ -351,8 +351,8 @@ async function loadBalances(endpoint: string, address: string) {
           </svg>
           Import Address
         </a>
-        <RouterLink to="/wallet/keplr">
-          <span class="btn btn-link">Add chain to Keplr</span>
+        <RouterLink to="/wallet/dosivault">
+          <span class="btn btn-link">Add chain to DosiVault</span>
         </RouterLink>
       </div>
     </div>

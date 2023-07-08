@@ -125,11 +125,11 @@ export const useWalletStore = defineStore('walletStore', {
       this.$reset()
     },
     setConnectedWallet(value: WalletConnected) {
-      if(value) this.wallet = value 
+      if(value) this.wallet = value
     },
     suggestChain() {
       // const router = useRouter()
-      router.push({path: '/wallet/keplr'})
+      router.push({path: '/wallet/dosivault'})
     }
   },
 });
