@@ -114,27 +114,27 @@ export const DEFAULT: RequestRegistry = {
     adapter,
   },
   base_tendermint_block_latest: {
-    url: '/cosmos/base/tendermint/v1beta1/blocks/latest',
+    url: '/lbm/base/ostracon/v1/blocks/latest',
     adapter,
   },
   base_tendermint_block_height: {
-    url: '/cosmos/base/tendermint/v1beta1/blocks/{height}',
+    url: '/lbm/base/ostracon/v1/blocks/{height}',
     adapter,
   },
   base_tendermint_node_info: {
-    url: '/cosmos/base/tendermint/v1beta1/node_info',
+    url: '/lbm/base/ostracon/v1/node_info',
     adapter,
   },
   base_tendermint_validatorsets_latest: {
-    url: '/cosmos/base/tendermint/v1beta1/validatorsets/latest',
+    url: '/lbm/base/ostracon/v1/validatorsets/latest',
     adapter,
   },
   base_tendermint_validatorsets_height: {
-    url: '/cosmos/base/tendermint/v1beta1/validatorsets/{height}',
+    url: '/lbm/base/ostracon/v1/validatorsets/{height}',
     adapter,
   },
   tx_txs: { url: '/cosmos/tx/v1beta1/txs', adapter },
-  tx_txs_block: { url: '/cosmos/tx/v1beta1/txs/block/{height}', adapter },
+  tx_txs_block: { url: '/lbm/tx/v1beta1/txs/block/{height}', adapter },
   tx_hash: { url: '/cosmos/tx/v1beta1/txs/{hash}', adapter },
 
   mint_inflation: { url: '/cosmos/mint/v1beta1/inflation', adapter },

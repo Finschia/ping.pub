@@ -1,0 +1,24 @@
+{
+    "chain_name": "Finschia-Base",
+    "coingecko": "",
+    "api": [
+        "https://hackwasm-node.finschia.network:1317"
+    ],
+    "rpc": [
+        "https://hackwasm-node.finschia.network:26657"
+    ],
+    "snapshot_provider": "",
+    "coin_type": "438",
+    "sdk_version": "0.45.10",
+    "addr_prefix": "line",
+    "logo": "/logos/FNSA-logo-light.png",
+    "assets": [
+        {
+            "base": "ucony",
+            "symbol": "CONY",
+            "exponent": "6",
+            "coingecko_id": "",
+            "logo": "/logos/FNSA-logo-light.png"
+        }
+    ]
+}

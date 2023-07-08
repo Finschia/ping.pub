@@ -1,0 +1,24 @@
+{
+    "chain_name": "Finschia-IBC-Counterpart",
+    "coingecko": "",
+    "api": [
+        "https://hackwasm-ibc-counterpart-node.finschia.network:1317"
+    ],
+    "rpc": [
+        "https://hackwasm-ibc-counterpart-node.finschia.network:26657"
+    ],
+    "snapshot_provider": "",
+    "coin_type": "438",
+    "sdk_version": "0.45.10",
+    "addr_prefix": "link",
+    "logo": "/logos/FNSA-logo-light.png",
+    "assets": [
+        {
+            "base": "ubrown",
+            "symbol": "BROWN",
+            "exponent": "6",
+            "coingecko_id": "",
+            "logo": "/logos/FNSA-logo-light.png"
+        }
+    ]
+}
