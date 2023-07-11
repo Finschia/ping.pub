@@ -14,6 +14,7 @@
   "dependencies": {
     "@chenfengyuan/vue-countdown": "2",
     "@cosmjs/crypto": "^0.29.5",
+    "@cosmjs/proto-signing": "^0.29.5",
     "@cosmjs/encoding": "^0.29.5",
     "@iconify/vue": "^4.1.0",
     "@intlify/unplugin-vue-i18n": "^0.8.2",

@@ -42,7 +42,9 @@ const tipMsg = computed(() => {
         {{ walletStore.shortAddress || 'Wallet' }}</span>
     </label>
     <div tabindex="0" class="dropdown-content menu shadow p-2 bg-base-100 rounded w-52 md:!w-64 overflow-auto">
-      <label v-if="!walletStore?.currentAddress" for="PingConnectWallet" class="btn btn-sm btn-primary">
+      <!--      <label v-if="!walletStore?.currentAddress" for="PingConnectWallet" class="btn btn-sm btn-primary">-->
+      <label v-if="!walletStore?.currentAddress" for="FinschiaConnectWallet" class="btn btn-sm btn-primary">
+        <!--      <label v-if="!walletStore?.currentAddress"  class="btn btn-sm btn-primary">-->
         <Icon icon="mdi:wallet" /><span class="ml-1 block">Connect Wallet</span>
       </label>
       <div class="px-2 mb-1 text-gray-500 dark:text-gray-400 font-semibold">
@@ -83,9 +85,12 @@ const tipMsg = computed(() => {
     </div>
   </div>
   <Teleport to="body">
-    <ping-connect-wallet :chain-id="baseStore.currentChainId" :hd-path="chainStore.defaultHDPath"
-      :addr-prefix="chainStore.current?.bech32Prefix || 'cosmos'" @connect="walletStateChange"
-      @keplr-config="walletStore.suggestChain()" />
+<!--    <ping-connect-wallet :chain-id="baseStore.currentChainId" :hd-path="chainStore.defaultHDPath"-->
+<!--      :addr-prefix="chainStore.current?.bech32Prefix || 'cosmos'" @connect="walletStateChange"-->
+<!--      @keplr-config="walletStore.suggestChain()" />-->
+    <connect-dosi-vault :chain-id="baseStore.currentChainId" :hd-path="chainStore.defaultHDPath"
+                        :addr-prefix="chainStore.current?.bech32Prefix || 'link'" @connect="walletStateChange"
+                        @dosivault-config="walletStore.suggestChain"/>
   </Teleport>
 </template>
 
