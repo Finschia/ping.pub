@@ -7,9 +7,9 @@ import {
   readWallet,
   writeWallet,
   removeWallet,
-} from "./Wallet";
+} from "./wallet";
 
-import type {Account, ConnectedWallet} from "./Wallet"
+import type {Account, ConnectedWallet} from "./wallet"
 
 const props = defineProps({
   chainId: String,
