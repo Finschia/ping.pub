@@ -4,12 +4,13 @@ import { Icon } from '@iconify/vue';
 import {
   WalletName,
   connectDosiVault,
+  createWallet,
   readWallet,
   writeWallet,
   removeWallet,
-} from "./wallet";
+} from "./wallets/wallet";
 
-import type {Account, ConnectedWallet} from "./wallet"
+import type {Account, ConnectedWallet} from "./wallets/wallet"
 
 const props = defineProps({
   chainId: String,
@@ -38,8 +39,14 @@ async function connect() {
   console.log("chainId: ", chainId)
   if (chainId != undefined) {
     try {
-      const wa = connectDosiVault(chainId.toString())
+      // const wa = connectDosiVault(chainId.toString())
+      const wa = createWallet(name.value, {
+        chainId: props.chainId,
+        hdPath: props.hdPath,
+        prefix: props.addrPrefix,
+      })
       await wa
+          .getAccounts()
           .then((x) => {
             accounts = x;
             if (accounts.length > 0) {

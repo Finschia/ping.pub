@@ -1,3 +1,8 @@
+import type {Transaction} from "../utils/type";
+import {Registry} from "@cosmjs/proto-signing";
+import {finschiaRegistryTypes} from "@finschia/finschia"
+import {DosiVaultWallet} from "@/components/FinschiaWidget/wallets/DosiVaultWallet";
+
 export enum WalletName {
     Keplr = "Keplr",
     DosiVault = "DosiVault",
@@ -13,6 +18,25 @@ export interface Account {
     address: string,
     algo: string,
     pubkey: Uint8Array,
+}
+
+export interface WalletArgument {
+    chainId?: string,
+    hdPath?: string,
+    address?: string,
+    name?: string,
+    transport?: string
+    prefix?: string,
+}
+
+export interface AbstractWallet {
+    name: WalletName
+    /**
+     * The accounts from the wallet (addresses)
+     */
+    getAccounts(): Promise<Account[]>
+    supportCoinType(coinType?: string): Promise<boolean>
+    sign(transaction: Transaction): Promise<any>
 }
 
 export interface ConnectedWallet {
@@ -71,3 +95,12 @@ export const connectDosiVault = async (chainId: string) => {
         throw new Error("Error parsing window object")
     }
 };
+
+export function createWallet(name: WalletName, arg: WalletArgument, registry?: Registry): AbstractWallet {
+    // @ts-ignore
+    const reg = registry || new Registry(finschiaRegistryTypes)
+    if (name === WalletName.DosiVault) {
+        return new DosiVaultWallet(arg, reg)
+    }
+    throw new Error("No wallet connected")
+}

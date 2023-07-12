@@ -10,7 +10,8 @@ import router from './router';
 import { useBaseStore } from './stores/useBaseStore';
 // @ts-ignore
 import wrapper from 'vue3-webcomponent-wrapper';
-import ConnectDosiVault from "@/components/ConnectWallet/ConnectDosiVault.vue";
+import ConnectDosiVault from "@/components/FinschiaWidget/ConnectDosiVault.vue";
+import FinschiaTxDialog from "@/components/FinschiaWidget/FinschiaTxDialog/index.vue";
 
 // Create vue app
 const app = createApp(App);
@@ -40,3 +41,4 @@ function registry(name: string, module: any) {
   }
 }
 registry('connect-dosi-vault', ConnectDosiVault)
+registry('finschia-tx-dialog', FinschiaTxDialog)
