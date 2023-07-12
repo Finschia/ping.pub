@@ -112,7 +112,7 @@ function initial() {
 
     getActiveValidators(props.endpoint).then(x => {
         activeValidators.value = x.validators
-        validator.value = x.validators.find(v => v.description.identity === '6783E9F948541962')?.operator_address
+        validator.value = x.validators.find((v: { description: { identity: string; }; }) => v.description.identity === '6783E9F948541962')?.operator_address
     })
 }
 

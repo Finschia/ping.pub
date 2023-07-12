@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {Coin} from '@cosmjs/amino';
+import type {Coin} from '@cosmjs/amino';
 import type {PropType} from 'vue';
 import {computed, ref} from 'vue';
 import {toBase64} from '@cosmjs/encoding'
