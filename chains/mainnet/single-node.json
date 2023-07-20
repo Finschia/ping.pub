@@ -1,0 +1,21 @@
+{
+    "chain_name": "localnet",
+    "coingecko": "",
+    "api": [
+        "http://localhost:1317"
+    ],
+    "snapshot_provider": "",
+    "coin_type": "438",
+    "sdk_version": "0.45.10",
+    "addr_prefix": "link",
+    "logo": "/logos/FNSA-logo-light.png",
+    "assets": [
+        {
+            "base": "cony",
+            "symbol": "FNSA",
+            "exponent": "6",
+            "coingecko_id": "",
+            "logo": "/logos/FNSA-logo-light.png"
+        }
+    ]
+}
