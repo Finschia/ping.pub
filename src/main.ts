@@ -32,7 +32,7 @@ setInterval(() => {
     // max allowed request
     blockStore.fetchLatest().finally(() => (requestCounter.value -= 1));
   }
-}, 6000);
+}, 2000);
 
 function registry(name: string, module: any) {
   if (!window.customElements.get(name)) {
