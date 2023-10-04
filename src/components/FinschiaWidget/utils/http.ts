@@ -41,9 +41,9 @@ function findField(obj: any, name: string): any {
     return undefined
 }
 
-// /lbm/base/ostracon/v1/blocks/latest
+// /cosmos/base/tendermint/v1beta1/blocks/latest
 export async function getLatestBlock(endpoint: string) {
-    const url = `${endpoint}/lbm/base/ostracon/v1/blocks/latest`
+    const url = `${endpoint}/cosmos/base/tendermint/v1beta1/blocks/latest`
     return get(url)
 }
 
