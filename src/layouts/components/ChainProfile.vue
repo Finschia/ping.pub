@@ -33,7 +33,7 @@ function changeEndpoint(item: Endpoint) {
             baseStore.latest?.block?.header?.height ||
             chainStore.chainName ||
             ''
-          }}
+          }} <span class="text-error">{{ baseStore.connected ? '' : 'disconnected' }}</span>
         </div>
         <div
           class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap hidden md:!block"
@@ -79,10 +79,14 @@ function changeEndpoint(item: Endpoint) {
       <div class="px-4 py-2 text-sm text-gray-400">Information</div>
       <div class="w-full">
         <div class="py-2 px-4">
-          Chain Id: {{ baseStore.latest.block?.header.chain_id }}
+          Chain Id: {{ baseStore.latest.block?.header.chain_id && baseStore.connected
+                        ? baseStore.latest.block.header.chain_id
+                        : 'N/A' }}
         </div>
         <div class="py-2 px-4">
-          Height: {{ baseStore.latest.block?.header.height }}
+          Height: {{ baseStore.latest.block?.header.height && baseStore.connected
+                      ? baseStore.latest.block.header.height
+                      : '0' }}
         </div>
       </div>
       <!-- bottom-->
